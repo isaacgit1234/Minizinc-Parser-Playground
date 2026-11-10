@@ -1,0 +1,83 @@
+name: assignment2
+version: 0.1.0.0
+license: BSD3
+author: "Rhys Newbury, Lauren Yim"
+maintainer: "rhys.newbury@monash.edu"
+copyright: "2026 Rhys Newbury"
+
+dependencies:
+    - base >= 4.7 && < 5
+
+ghc-options:
+    # For details on warnings: https://downloads.haskell.org/~ghc/master/users-guide/using-warnings.html
+    - -Weverything
+
+    # Disable warnings that are unnecessary
+    - -Wno-all-missed-specialisations
+    - -Wno-implicit-prelude
+    - -Wno-prepositive-qualified-module
+    - -Wno-missing-deriving-strategies
+    - -Wno-missing-exported-signatures
+    - -Wno-missing-import-lists
+    - -Wno-missing-local-signatures
+    - -Wno-monomorphism-restriction
+    - -Wno-missing-kind-signatures
+    - -Wno-missing-poly-kind-signatures
+    - -Wno-missing-role-annotations
+    - -Wno-missing-safe-haskell-mode
+    - -Wno-missed-specialisations
+    - -Wno-operator-whitespace
+    - -Wno-safe
+    - -Wno-term-variable-capture
+    - -Wno-unsafe
+    - -Wno-unused-packages
+
+    # Make all warnings errors...
+    - -Werror
+    # ...except some warnings
+    - -Wwarn=missing-export-lists # this makes it easier to test code in ghci by not specifying an export list
+    - -Wwarn=name-shadowing
+    - -Wwarn=unused-imports
+    - -Wwarn=unused-local-binds
+    - -Wwarn=unused-matches
+    - -Wwarn=unused-pattern-binds
+    - -Wwarn=unused-top-binds
+    - -Wwarn=unused-record-wildcards
+    - -Wwarn=type-defaults
+
+default-extensions:
+    - InstanceSigs
+
+library:
+    source-dirs:
+        - src
+    dependencies:
+        - time
+
+executables:
+    main:
+        main: Main.hs
+        source-dirs: app
+        other-modules: []
+        dependencies:
+            - assignment2
+            - aeson
+            - directory
+            - ghc
+            - ghc-paths
+            - scotty
+            - text
+            - time
+            - filepath
+
+tests:
+    batch:
+        main: Spec.hs
+        source-dirs: test
+        ghc-options: []
+        dependencies:
+            - assignment2
+            - directory
+            - doctest
+            - filepath
+            - Glob

@@ -1,0 +1,12 @@
+{
+    "files.exclude": {
+        "**/*.dyn_*": true,
+        "**/*.hi": true,
+        "**/*.o": true
+    },
+    "haskell.formattingProvider": "fourmolu",
+    "cSpell.words": [
+        "fmap",
+        "Nonterminal"
+    ]
+}

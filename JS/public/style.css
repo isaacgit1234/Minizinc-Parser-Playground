@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header,
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+h1,
+h2 {
+    margin-bottom: 10px;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    /* Ensure the sections are laid out horizontally */
+    justify-content: space-between;
+    gap: 2em;
+    height: 100%;
+    min-height: 80vh;
+}
+
+#container > section {
+    flex: 1;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+section h2 {
+    margin: 0;
+}
+
+textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+output {
+    display: block;
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#validate-output {
+    white-space: pre;
+}
+
+#grammar-parse-error-output {
+    flex: 0.25;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ES2024",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "lib": ["ES2024", "DOM", "DOM.Iterable"],
+        "skipLibCheck": true,
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "strict": true,
+        "noImplicitAny": true
+    },
+    "include": ["src"]
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FIT2102 A2 2026 - MiniZinc Solver</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 900px;
+                margin: 40px auto;
+                padding: 0 20px;
+                line-height: 1.5;
+            }
+
+            h1 {
+                margin-bottom: 8px;
+            }
+
+            p {
+                margin-top: 0;
+                color: #444;
+            }
+
+            main {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            label {
+                font-weight: bold;
+            }
+
+            textarea,
+            output {
+                width: 100%;
+                box-sizing: border-box;
+                font-family: monospace;
+                font-size: 14px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                padding: 12px;
+            }
+
+            textarea {
+                min-height: 300px;
+                resize: vertical;
+            }
+
+            output {
+                display: block;
+                min-height: 120px;
+                white-space: pre-wrap;
+                background: #f8f8f8;
+            }
+
+            button {
+                width: fit-content;
+                padding: 10px 18px;
+                font-size: 14px;
+                border: 1px solid #333;
+                border-radius: 6px;
+                background: white;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background: #f0f0f0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>MiniZinc Solver</h1>
+        <p>Enter a MiniZinc model below, then click Run.</p>
+
+        <main>
+            <label for="model-input">Model</label>
+            <textarea
+                id="model-input"
+                placeholder="e.g.
+var 1..3: x;
+var 1..3: y;
+constraint x != y;
+solve satisfy;"
+            ></textarea>
+
+            <div style="display: flex; gap: 12px">
+                <button id="run-model">Run</button>
+                <button id="save-model">Save Solution</button>
+            </div>
+
+            <label for="model-output">Output</label>
+            <output id="model-output"></output>
+
+            <label for="save-output">Save Status</label>
+            <output id="save-output"></output>
+        </main>
+
+        <script type="module" src="./src/main.ts"></script>
+    </body>
+</html>
